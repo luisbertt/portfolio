@@ -16,7 +16,7 @@ export default function Home() {
 
         <ul>
           <li><Link href="/credit-card"><a>💳 Credit Card Checker</a></Link></li>
-          <li><a href="#">💵 Bill Calculator</a></li>
+          <li><Link href="/bill-calculator"><a>💵 Bill Calculator</a></Link></li>
         </ul>
       </main>
 
