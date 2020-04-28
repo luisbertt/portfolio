@@ -3,22 +3,30 @@ import Link from "next/link"
 import useValidCreditCard from "../hooks/useValidCreditCard"
 
 const CreditCard = () => {
-  const { isValid, isEmpty, creditCardCompany, setCardNumber } = useValidCreditCard()
+  const {
+    isValid,
+    isEmpty,
+    creditCardCompany,
+    setCardNumber,
+  } = useValidCreditCard()
 
   return (
     <Layout>
-      <Link href="/"><a>Back</a></Link>
+      <Link href="/">
+        <a>Back</a>
+      </Link>
       <main>
         <h1 className="title">💳 Credit Card Checker</h1>
-        <input 
-          type="text" 
-          style={{backgroundImage: `url(./${creditCardCompany}.png)`, 
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: '5px',
-                  backgroundSize: '48px 30px'
-                }}
-          className={isEmpty ? "" : isValid ? "valid" : "invalid"} 
-          onChange={(e) => setCardNumber(e.target.value)} 
+        <input
+          type="text"
+          style={{
+            backgroundImage: `url(./${creditCardCompany}.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "5px",
+            backgroundSize: "48px 30px",
+          }}
+          className={isEmpty ? "" : isValid ? "valid" : "invalid"}
+          onChange={e => setCardNumber(e.target.value)}
         />
       </main>
 
@@ -38,7 +46,7 @@ const CreditCard = () => {
         }
 
         h1 {
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
 
         input {

@@ -15,7 +15,7 @@ const Footer = () => (
       footer {
         width: 100%;
         height: 80px;
-        font-size: .9rem;
+        font-size: 0.9rem;
         border-top: 1px solid #eaeaea;
         display: flex;
         justify-content: center;

@@ -1,18 +1,16 @@
-import Head from 'next/head'
+import Head from "next/head"
 import Footer from "./Footer"
 
-const Layout = ({children}) => (
+const Layout = ({ children }) => (
   <div className="container">
     <Head>
       <title>Luisbert Seijas</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-  
     {children}
-    
 
-    <Footer/>
+    <Footer />
 
     <style jsx>{`
       .container {
@@ -31,9 +29,8 @@ const Layout = ({children}) => (
       body {
         padding: 0;
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-          sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       }
 
       * {

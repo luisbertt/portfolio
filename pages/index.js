@@ -1,6 +1,5 @@
-
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from "next/link"
+import Layout from "../components/Layout"
 
 export default function Home() {
   return (
@@ -11,12 +10,21 @@ export default function Home() {
         </h1>
 
         <p className="description">
-          A bunch of mini apps I've built over the years to practice algorithmns and programming in general.
+          A bunch of mini apps I've built over the years to practice algorithmns
+          and programming in general.
         </p>
 
         <ul>
-          <li><Link href="/credit-card"><a>💳 Credit Card Checker</a></Link></li>
-          <li><Link href="/bill-calculator"><a>💵 Bill Calculator</a></Link></li>
+          <li>
+            <Link href="/credit-card">
+              <a>💳 Credit Card Checker</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/bill-calculator">
+              <a>💵 Bill Calculator</a>
+            </Link>
+          </li>
         </ul>
       </main>
 

@@ -5,7 +5,7 @@ import useBills from "../hooks/useBills"
 
 const BillCalculator = () => {
   const [isValid, setIsValid] = useState(false)
-  const [quantityInput, setQuantityInput] = useState("")  
+  const [quantityInput, setQuantityInput] = useState("")
 
   const { quantities, setQuantities, bills, deleteQuantity } = useBills()
 
@@ -14,15 +14,19 @@ const BillCalculator = () => {
   }, [quantityInput])
 
   function isValidInput(input) {
-    (input == "" || input == null || isNaN(input)) ? setIsValid(false) : setIsValid(true) 
+    input == "" || input == null || isNaN(input)
+      ? setIsValid(false)
+      : setIsValid(true)
   }
 
   return (
     <Layout>
-      <Link href="/"><a>Back</a></Link>
+      <Link href="/">
+        <a>Back</a>
+      </Link>
       <main>
         <h1>💵 Bill Calculator</h1>
-        <form 
+        <form
           onSubmit={e => {
             e.preventDefault()
             if (isValid) {
@@ -43,19 +47,27 @@ const BillCalculator = () => {
           <div className="box left">
             <h3>Quantities</h3>
             <ul>
-              { quantities && quantities.map((quantity, i) => (
-                  <li 
-                    key={i+quantity}
+              {quantities &&
+                quantities.map((quantity, i) => (
+                  <li
+                    key={i + quantity}
                     onClick={() => deleteQuantity(quantity)}
-                  >${quantity}</li>
-                )
-              )}
+                  >
+                    ${quantity}
+                  </li>
+                ))}
             </ul>
           </div>
           <div className="box right">
             <h3>Bills</h3>
             <ul>
-              { Object.keys(bills).reverse().map(bill => <li key={bill}>${bill} .............. {bills[bill]}</li>) }
+              {Object.keys(bills)
+                .reverse()
+                .map(bill => (
+                  <li key={bill}>
+                    ${bill} .............. {bills[bill]}
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
@@ -75,7 +87,7 @@ const BillCalculator = () => {
         }
 
         h1 {
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
 
         input {
@@ -90,13 +102,13 @@ const BillCalculator = () => {
 
         button {
           vertical-align: middle;
-          margin-left: .5em;
+          margin-left: 0.5em;
           height: 50px;
           font-size: 1.25rem;
-          color: #006AFF;
+          color: #006aff;
           font-weight: 600;
-          border: 3px solid #006AFF;
-          border-radius: 5px
+          border: 3px solid #006aff;
+          border-radius: 5px;
         }
 
         .grid {
@@ -117,7 +129,7 @@ const BillCalculator = () => {
         }
 
         li {
-          margin-bottom: .25rem;
+          margin-bottom: 0.25rem;
         }
 
         .right {
@@ -143,6 +155,5 @@ const BillCalculator = () => {
     </Layout>
   )
 }
-
 
 export default BillCalculator

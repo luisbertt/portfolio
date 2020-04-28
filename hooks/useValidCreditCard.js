@@ -8,29 +8,26 @@ const useValidCreditCard = () => {
 
   useEffect(() => {
     cardNumber == "" ? setIsEmpty(true) : setIsEmpty(false)
-    
+
     isValidCreditCardNumber(cardNumber) ? setIsValid(true) : setIsValid(false)
-   
+
     setCreditCardCompany(findCreditCardCompany(cardNumber))
   }, [cardNumber])
 
   function isValidCreditCardNumber(number) {
-
     let unevens_sum = 0,
-        evens_sum = 0,
-        numDigits,
-        digitsArray,
-        i, 
-        j = 1
+      evens_sum = 0,
+      numDigits,
+      digitsArray,
+      i,
+      j = 1
 
-    if (number == "" || number == null || isNaN(number))
-      return false
+    if (number == "" || number == null || isNaN(number)) return false
 
     digitsArray = number.toString().split("").map(Number)
     numDigits = digitsArray.length
 
-    if (numDigits < 13 || numDigits > 16)
-      return false
+    if (numDigits < 13 || numDigits > 16) return false
 
     for (i = numDigits - 1; i >= 0; i--) {
       if (j % 2 == 1) {
@@ -38,32 +35,31 @@ const useValidCreditCard = () => {
       } else {
         if (digitsArray[i] * 2 > 9) {
           evens_sum += (digitsArray[i] * 2) % 10
-          evens_sum += 1 
+          evens_sum += 1
         } else {
           evens_sum += digitsArray[i] * 2
         }
       }
       j++
     }
-    
+
     return (unevens_sum + evens_sum) % 10 == 0 ? true : false
   }
 
   function findCreditCardCompany(number) {
-    let firstTwoDigits = number.toString().substring(0,2)
+    let firstTwoDigits = number.toString().substring(0, 2)
     let numDigits = number.toString().length
 
-    if (numDigits == 15 && (firstTwoDigits == 34 || firstTwoDigits == 37)) 
+    if (numDigits == 15 && (firstTwoDigits == 34 || firstTwoDigits == 37))
       return "amex"
-    
-    if (numDigits == 16 && (firstTwoDigits > 50 && firstTwoDigits < 56)) 
+
+    if (numDigits == 16 && firstTwoDigits > 50 && firstTwoDigits < 56)
       return "mastercard"
 
-    if ((numDigits == 13 || numDigits == 16) && firstTwoDigits[0] == 4) 
+    if ((numDigits == 13 || numDigits == 16) && firstTwoDigits[0] == 4)
       return "visa"
-  
-    if (numDigits == 16 && firstTwoDigits[0] == 6) 
-      return "discover"
+
+    if (numDigits == 16 && firstTwoDigits[0] == 6) return "discover"
 
     return "other"
   }
