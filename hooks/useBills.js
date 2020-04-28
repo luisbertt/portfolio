@@ -8,7 +8,6 @@ const useBills = () => {
 
   useEffect(() => {
     const newBills = Object.assign({}, initialBillsState)
-    console.log(quantities)
     
     quantities.forEach(qty => {
       billDenominations.forEach(denomination => {
