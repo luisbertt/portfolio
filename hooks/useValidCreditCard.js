@@ -15,14 +15,14 @@ const useValidCreditCard = () => {
   }, [cardNumber])
 
   function isValidCreditCardNumber(number) {
+    if (number == "" || number == null || isNaN(number)) return false
+
     let unevens_sum = 0,
       evens_sum = 0,
       numDigits,
       digitsArray,
       i,
       j = 1
-
-    if (number == "" || number == null || isNaN(number)) return false
 
     digitsArray = number.toString().split("").map(Number)
     numDigits = digitsArray.length
