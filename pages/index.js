@@ -1,3 +1,4 @@
+import Donut from "../components/Donut"
 import Layout from "../components/Layout"
 
 import cms from "../portfolio.json"
@@ -16,11 +17,13 @@ const projects = groupProjectsByCategory(cms.projects)
 export default function Home() {
     return (
         <Layout>
-            <div style={{ margin: "0 0 3rem 0" }}>
-                <h1>Luisbert</h1>
-                <p>Software Engineer</p>
-                <p>github</p>
-            </div>
+            <Donut />
+            <header>
+                <div>
+                    <h1>Luisbert</h1>
+                    <p>Software Engineer. github</p>
+                </div>
+            </header>
 
             <h2>projects</h2>
             {projects.map(({ category, projects }) => (
