@@ -4,7 +4,14 @@ body {
     font-family: "Menlo", monospace;
 }
 
+.container {
+    width: 100%;
+    max-width: 50rem;
+    margin: 4rem auto;
+}
+
 .project {
+    width: 50%;
     margin: 0;
     padding: .5rem;
     border-radius: 5px;

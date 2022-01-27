@@ -2,7 +2,7 @@ import Head from "next/head"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => (
-    <div style={{ width: "100%", maxWidth: "39rem", margin: "4rem auto" }}>
+    <div className="container">
         <Head>
             <title>Luisbert Seijas</title>
         </Head>
