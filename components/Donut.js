@@ -16,7 +16,7 @@ function asciiframe() {
         sB = Math.sin(B)
 
     for (let k = 0; k < 880; k++) {
-        b[k] = k % 40 == 39 ? "\n" : " "
+        b[k] = k % 80 == 79 ? "\n" : " "
         z[k] = 0
     }
 
@@ -35,7 +35,7 @@ function asciiframe() {
 
             let x = 0 | (20 + 15 * D * (cp * h * cB - t * sB)),
                 y = 0 | (6 + 7.5 * D * (cp * h * sB + t * cB)),
-                o = x + 40 * y,
+                o = x + 80 * y,
                 N =
                     0 |
                     (8 *
@@ -43,7 +43,7 @@ function asciiframe() {
                             sp * ct * sA -
                             st * cA -
                             cp * ct * sB))
-            if (y < 22 && y >= 0 && x >= 0 && x < 39 && D > z[o]) {
+            if (y < 11 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
                 z[o] = D
                 b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0]
             }
