@@ -1,0 +1,16 @@
+body {
+    background: black;
+    color: white;
+    font-family: "Menlo", monospace;
+}
+
+.project {
+    margin: 0;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.project:hover {
+    background: #212120;
+    cursor: pointer;
+}

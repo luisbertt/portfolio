@@ -1,0 +1,57 @@
+{
+    "bio": "Software Engineer",
+    "projects": [
+        {
+            "name": "Franco",
+            "description": "management system for residential painting company",
+            "previewImg": "franco.png",
+            "stack": ["typescript", "react", "next.js", "prisma", "postgresql"],
+            "demoLink": "https://franco.luisbert.me",
+            "category": "work"
+        },
+        {
+            "name": "Gerhpe",
+            "description": "gallery site for award-winning artist",
+            "previewImg": "gerhpe.png",
+            "stack": ["javascript", "react", "next.js", "airtable"],
+            "demoLink": "https://gerhpe.com",
+            "category": "work"
+        },
+        {
+            "name": "Sorting Visualizer",
+            "description": "a visualizer for different sorting algorithms",
+            "previewImg": "sorting-visualizer.png",
+            "stack": ["typescript", "react", "next.js"],
+            "codeLink": "https://github.com/luisbertt/sorting-visualizer",
+            "demoLink": "https://sortingvis.luisbert.me",
+            "category": "fun"
+        },
+        {
+            "name": "Flag Quiz",
+            "description": "game where you guess countries based on their flag",
+            "previewImg": "flag-quiz.png",
+            "stack": ["typescript", "react", "next.js"],
+            "codeLink": "https://github.com/luisbertt/flag-quiz",
+            "demoLink": "https://flags.luisbert.me",
+            "category": "fun"
+        },
+        {
+            "name": "Minesweeper",
+            "description": "minesweeper game",
+            "previewImg": "minesweeper.png",
+            "stack": ["javascript", "vanillajs"],
+            "codeLink": "https://github.com/luisbertt/minesweeper-vanillajs",
+            "demoLink": "https://minesweeper.luisbert.me",
+            "category": "fun"
+        },
+        {
+            "name": "csvtojson",
+            "description": "cli tool to turn a csv file into json",
+            "previewImg": "csvtojson.png",
+            "stack": ["go"],
+            "codeLink": "https://github.com/luisbertt/csvtojson",
+            "demoLink": "https://csvtojson.luisbert.me",
+            "category": "tools/misc."
+        }
+    ]
+}
