@@ -5,7 +5,7 @@ const Layout = ({ children }) => (
     <div className="container">
         <Head>
             <title>Luisbert Seijas</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/images/favicon.ico" />
             <script
                 defer
                 data-domain="luisbert.me"
