@@ -3,39 +3,39 @@ import { useState } from "react"
 let A = 1,
     B = 1
 
+const { sin, cos } = Math
+
 function asciiframe() {
-    let b = [],
-        z = []
+    let b = [], z = []
+    let height = 12, width = 30, resolution = height * width
 
     A += 0.07
     B += 0.03
 
-    let cA = Math.cos(A),
-        sA = Math.sin(A),
-        cB = Math.cos(B),
-        sB = Math.sin(B)
+    let cA = cos(A), sA = sin(A), cB = cos(B), sB = sin(B)
+    let PI = 3.14
 
-    for (let k = 0; k < 880; k++) {
-        b[k] = k % 80 == 79 ? "\n" : " "
+    for (let k = 0; k < resolution; k++) {
+        b[k] = k % width == width - 1 ? "\n" : " "
         z[k] = 0
     }
 
-    for (let j = 0; j < 6.28; j += 0.07) {
+    for (let j = 0; j < 2 * PI; j += 0.07) {
         // j <=> theta
-        let ct = Math.cos(j),
-            st = Math.sin(j)
+        let ct = cos(j), st = sin(j)
 
-        for (let i = 0; i < 6.28; i += 0.02) {
+        for (let i = 0; i < 2 * PI; i += 0.02) {
             // i <=> phi
-            let sp = Math.sin(i),
-                cp = Math.cos(i),
+            let sp = sin(i), cp = cos(i),
                 h = ct + 2, // R1  R2*cos(theta)
                 D = 1 / (sp * h * sA + st * cA + 5), // this is 1/z
                 t = sp * h * cA - st * sA // this is a clever factoring of some of the terms in x' and y'
 
-            let x = 0 | (20 + 15 * D * (cp * h * cB - t * sB)),
-                y = 0 | (6 + 7.5 * D * (cp * h * sB + t * cB)),
-                o = x + 80 * y,
+            let xPos = 15, yPos = 6
+
+            let x = 0 | (xPos + 15 * D * (cp * h * cB - t * sB)),
+                y = 0 | (yPos + 7.5 * D * (cp * h * sB + t * cB)),
+                o = x + width * y,
                 N =
                     0 |
                     (8 *
@@ -43,7 +43,8 @@ function asciiframe() {
                             sp * ct * sA -
                             st * cA -
                             cp * ct * sB))
-            if (y < 11 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
+
+            if (y < height && y >= 0 && x >= 0 && x < width - 1 && D > z[o]) {
                 z[o] = D
                 b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0]
             }
