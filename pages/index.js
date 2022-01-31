@@ -1,5 +1,7 @@
-import Donut from "../components/Donut"
+import { useState } from "react"
 import Layout from "../components/Layout"
+import Donut from "../components/Donut"
+import Details from "../components/Details"
 
 import cms from "../portfolio.json"
 
@@ -15,6 +17,8 @@ function groupProjectsByCategory(projects) {
 const projects = groupProjectsByCategory(cms.projects)
 
 export default function Home() {
+    const [activeProject, setActiveProject] = useState(null)
+
     return (
         <Layout>
             <Donut />
@@ -24,30 +28,38 @@ export default function Home() {
                     <p>Software Engineer. github</p>
                 </div>
             </header>
-
-            <h2>projects</h2>
-            {projects.map(({ category, projects }) => (
-                <Category category={category} key={category}>
-                    {projects.map(project => (
-                        <Project key={project.name} project={project} />
+            <div style={{ display: "flex" }}>
+                <div>
+                    <h2>projects</h2>
+                    {projects.map(({ category, projects }) => (
+                        <Category category={category} key={category}>
+                            {projects.map(project => (
+                                <Project
+                                    key={project.name}
+                                    project={project}
+                                    setActiveProject={setActiveProject}
+                                />
+                            ))}
+                        </Category>
                     ))}
-                </Category>
-            ))}
+                </div>
+                {activeProject ? <Details project={activeProject} /> : null}
+            </div>
         </Layout>
     )
 }
 
-const Project = ({ project: { name, description } }) => (
-    <p className="project">
+const Project = ({ project, setActiveProject }) => (
+    <p className="project" onMouseEnter={() => setActiveProject(project)}>
         <span style={{ textDecoration: "underline", fontWeight: "bold" }}>
-            {name}
+            {project.name}
         </span>
-        : {description}
+        : {project.description}
     </p>
 )
 
 const Category = ({ category, children }) => (
-    <div style={{ margin: "0 0 3rem 0" }}>
+    <div style={{ margin: "0 0 2rem 0" }}>
         <h3>{category}</h3>
         {children}
     </div>
