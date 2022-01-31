@@ -1,16 +1,17 @@
 import Image from "next/image"
 
-const Details = () => (
-    <div>
+const Details = ({ project }) => (
+    <aside>
         <h3 style={{ textAlign: "center", textDecoration: "underline" }}>
-            Hello
+            {project.name}
         </h3>
-        <Image width="425px" height="225px" src="/sorting-visualizer.png" />
+        <Image width="350px" height="200px" src={`/${project.previewImg}`} />
         <p style={{ textAlign: "center", width: "100%" }}>
-            <a href="">code</a> . <a href="">live</a>
+            {project.codeLink ? <a href={project.codeLink}>code . </a> : null}
+            <a href={project.demoLink}>demo</a>
         </p>
-        <p>description</p>
-    </div>
+        <p style={{ textAlign: "center" }}>{project.description}</p>
+    </aside>
 )
 
 export default Details
