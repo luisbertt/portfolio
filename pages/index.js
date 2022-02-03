@@ -22,45 +22,46 @@ export default function Home() {
     return (
         <Layout>
             <Donut />
-            <header>
-                <div>
-                    <h1>Luisbert</h1>
+            <div>
+                <header className="py-14">
+                    <h1 className="text-4xl font-bold mb-4">Luisbert</h1>
                     <p>Software Engineer. github</p>
+                </header>
+                <div className="flex space-x-4">
+                    <div>
+                        <h2 className="text-2xl font-bold">projects</h2>
+                        {projects.map(({ category, projects }) => (
+                            <Category category={category} key={category}>
+                                {projects.map(project => (
+                                    <Project
+                                        key={project.name}
+                                        project={project}
+                                        setActiveProject={setActiveProject}
+                                    />
+                                ))}
+                            </Category>
+                        ))}
+                    </div>
+                    {activeProject ? <Details project={activeProject} /> : null}
                 </div>
-            </header>
-            <div style={{ display: "flex" }}>
-                <div>
-                    <h2>projects</h2>
-                    {projects.map(({ category, projects }) => (
-                        <Category category={category} key={category}>
-                            {projects.map(project => (
-                                <Project
-                                    key={project.name}
-                                    project={project}
-                                    setActiveProject={setActiveProject}
-                                />
-                            ))}
-                        </Category>
-                    ))}
-                </div>
-                {activeProject ? <Details project={activeProject} /> : null}
             </div>
         </Layout>
     )
 }
 
 const Project = ({ project, setActiveProject }) => (
-    <p className="project" onMouseEnter={() => setActiveProject(project)}>
-        <span style={{ textDecoration: "underline", fontWeight: "bold" }}>
-            {project.name}
-        </span>
-        : {project.description}
+    <p
+        className="w-96 p-2 hover:bg-zinc-900 rounded"
+        onMouseEnter={() => setActiveProject(project)}
+    >
+        <span className="font-bold underline">{project.name}</span>:{" "}
+        {project.description}
     </p>
 )
 
 const Category = ({ category, children }) => (
-    <div style={{ margin: "0 0 2rem 0" }}>
-        <h3>{category}</h3>
+    <div className="mb-4">
+        <h3 className="py-3 px-2 text-xl font-bold">{category}</h3>
         {children}
     </div>
 )

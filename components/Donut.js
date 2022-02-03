@@ -6,13 +6,20 @@ let A = 1,
 const { sin, cos } = Math
 
 function asciiframe() {
-    let b = [], z = []
-    let height = 12, width = 30, resolution = height * width
+    let b = [],
+        z = []
+    let height = 12,
+        width = 26,
+        resolution = height * width
 
     A += 0.07
-    B += 0.03
+    //    B += 0.03
 
-    let cA = cos(A), sA = sin(A), cB = cos(B), sB = sin(B)
+    let cA = cos(A),
+        sA = sin(A),
+        cB = cos(B),
+        sB = sin(B)
+
     let PI = 3.14
 
     for (let k = 0; k < resolution; k++) {
@@ -22,19 +29,22 @@ function asciiframe() {
 
     for (let j = 0; j < 2 * PI; j += 0.07) {
         // j <=> theta
-        let ct = cos(j), st = sin(j)
+        let ct = cos(j),
+            st = sin(j)
 
         for (let i = 0; i < 2 * PI; i += 0.02) {
             // i <=> phi
-            let sp = sin(i), cp = cos(i),
+            let sp = sin(i),
+                cp = cos(i),
                 h = ct + 2, // R1  R2*cos(theta)
-                D = 1 / (sp * h * sA + st * cA + 5), // this is 1/z
+                D = 1 / (sp * h * sA + st * cA + 4.5), // this is 1/z
                 t = sp * h * cA - st * sA // this is a clever factoring of some of the terms in x' and y'
 
-            let xPos = 15, yPos = 6
+            let xPos = 13,
+                yPos = 6
 
-            let x = 0 | (xPos + 15 * D * (cp * h * cB - t * sB)),
-                y = 0 | (yPos + 7.5 * D * (cp * h * sB + t * cB)),
+            let x = 0 | (xPos + 12 * D * (cp * h * cB - t * sB)),
+                y = 0 | (yPos + 6 * D * (cp * h * sB + t * cB)),
                 o = x + width * y,
                 N =
                     0 |
@@ -70,7 +80,11 @@ const Donut = () => {
     }
 
     return (
-        <pre onMouseEnter={play} onMouseLeave={pause}>
+        <pre
+            onMouseEnter={play}
+            onMouseLeave={pause}
+            className="w-min h-min text-xs tracking-widest"
+        >
             <a
                 href="https://www.a1k0n.net/2011/07/20/donut-math.html"
                 target="_blank"

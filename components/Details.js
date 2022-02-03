@@ -1,16 +1,14 @@
 import Image from "next/image"
 
 const Details = ({ project }) => (
-    <aside>
-        <h3 style={{ textAlign: "center", textDecoration: "underline" }}>
-            {project.name}
-        </h3>
+    <aside className="w-96 h-min p-4 border border-zinc-900 rounded-lg text-center">
+        <h3 className="text-xl font-bold mb-2 underline">{project.name}</h3>
         <Image width="350px" height="200px" src={`/${project.previewImg}`} />
-        <p style={{ textAlign: "center", width: "100%" }}>
+        <p>
             {project.codeLink ? <a href={project.codeLink}>code . </a> : null}
             <a href={project.demoLink}>demo</a>
         </p>
-        <p style={{ textAlign: "center" }}>{project.description}</p>
+        <p>{project.description}</p>
     </aside>
 )
 
