@@ -7,7 +7,7 @@
             "previewImg": "franco.png",
             "stack": ["typescript", "react", "next.js", "prisma", "postgresql"],
             "demoLink": "https://franco.luisbert.me",
-            "category": "work"
+            "category": "Work"
         },
         {
             "name": "Gerhpe",
@@ -15,7 +15,7 @@
             "previewImg": "gerhpe.png",
             "stack": ["javascript", "react", "next.js", "airtable"],
             "demoLink": "https://gerhpe.com",
-            "category": "work"
+            "category": "Work"
         },
         {
             "name": "Sorting Visualizer",
@@ -24,7 +24,7 @@
             "stack": ["typescript", "react", "next.js"],
             "codeLink": "https://github.com/luisbertt/sorting-visualizer",
             "demoLink": "https://sortingvis.luisbert.me",
-            "category": "fun"
+            "category": "Fun"
         },
         {
             "name": "Flag Quiz",
@@ -33,25 +33,25 @@
             "stack": ["typescript", "react", "next.js"],
             "codeLink": "https://github.com/luisbertt/flag-quiz",
             "demoLink": "https://flags.luisbert.me",
-            "category": "fun"
+            "category": "Fun"
         },
         {
             "name": "Minesweeper",
             "description": "minesweeper game",
             "previewImg": "minesweeper.png",
-            "stack": ["javascript", "vanillajs"],
+            "stack": ["javascript"],
             "codeLink": "https://github.com/luisbertt/minesweeper-vanillajs",
             "demoLink": "https://minesweeper.luisbert.me",
-            "category": "fun"
+            "category": "Fun"
         },
         {
-            "name": "csvtojson",
-            "description": "cli tool to turn a csv file into json",
-            "previewImg": "csvtojson.png",
-            "stack": ["go"],
-            "codeLink": "https://github.com/luisbertt/csvtojson",
-            "demoLink": "https://csvtojson.luisbert.me",
-            "category": "tools/misc."
+            "name": "relations",
+            "description": "tool to aggregate credit card monthly expenses",
+            "previewImg": "relations.png",
+            "stack": ["javascript", "react"],
+            "codeLink": "https://github.com/luisbertt/relations",
+            "demoLink": "https://relations.luisbert.me",
+            "category": "Tools/misc."
         }
     ]
 }
