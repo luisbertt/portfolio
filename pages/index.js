@@ -37,15 +37,15 @@ export default function Home() {
                         <span>Links:</span>
                         <a
                             href="mailto:luisbrttt@gmail.com"
-                            className="text-xl"
+                            className="text-2xl"
                         >
                             📧
                         </a>
                         <a href="https://github.com/luisbertt" target="_blank">
-                            <i className="devicon-github-original text-xl" />
+                            <i className="devicon-github-original text-2xl" />
                         </a>
                         <a href="https://linkedin.com/in/luisbert">
-                            <i className="devicon-linkedin-plain text-xl" />
+                            <i className="devicon-linkedin-plain text-2xl" />
                         </a>
                     </p>
                 </header>

@@ -14,12 +14,16 @@ const Details = ({ project }) => (
             {project.demoLink ? <a href={project.demoLink}>demo</a> : null}
         </p>
         <p className="py-2">{project.description}</p>
-        <p className="flex justify-center space-x-2">
+        <p className="text-center">
             {project.stack.includes("javascript") && (
                 <i class="devicon-javascript-plain colored text-2xl" />
             )}
             {project.stack.includes("typescript") && (
-                <svg viewBox="0 0 128 128" height="24" style={{ margin: "0" }}>
+                <svg
+                    viewBox="0 0 128 128"
+                    height="24"
+                    style={{ margin: "auto" }}
+                >
                     <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>
                     <path
                         data-name="original"
@@ -28,14 +32,8 @@ const Details = ({ project }) => (
                     ></path>
                 </svg>
             )}
-            {project.stack.includes("react") && (
-                <i className="devicon-react-original colored text-xl" />
-            )}
-            {project.stack.includes("next.js") && (
-                <i className="devicon-nextjs-original text-xl" />
-            )}
-            {project.stack.includes("postgresql") && (
-                <i className="devicon-postgresql-plain text-2xl" />
+            {project.stack.includes("next") && (
+                <i class="devicon-nextjs-original-wordmark"></i>
             )}
         </p>
     </aside>
