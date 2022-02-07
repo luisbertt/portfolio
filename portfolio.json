@@ -6,7 +6,6 @@
             "description": "management system for residential painting company",
             "previewImg": "franco.png",
             "stack": ["typescript", "react", "next.js", "prisma", "postgresql"],
-            "demoLink": "https://franco.luisbert.me",
             "category": "Work"
         },
         {
@@ -14,6 +13,7 @@
             "description": "gallery site for award-winning artist",
             "previewImg": "gerhpe.png",
             "stack": ["javascript", "react", "next.js", "airtable"],
+            "codeLink": "https://github.com/luisbertt/gerhpe",
             "demoLink": "https://gerhpe.com",
             "category": "Work"
         },
