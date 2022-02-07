@@ -6,7 +6,7 @@ const Details = ({ project }) => (
         <Image width="350px" height="200px" src={`/${project.previewImg}`} />
         <p>
             {project.codeLink ? <a href={project.codeLink}>code . </a> : null}
-            <a href={project.demoLink}>demo</a>
+            {project.demoLink ? <a href={project.demoLink}>demo</a> : null}
         </p>
         <p>{project.description}</p>
     </aside>
