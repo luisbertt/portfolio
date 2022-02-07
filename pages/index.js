@@ -33,10 +33,19 @@ export default function Home() {
                         Interest: Learning, Film, Sports, Reading, Snowboarding,
                         Chess
                     </p>
-                    <p>
-                        Links:{" "}
+                    <p className="space-x-2">
+                        <span>Links:</span>
+                        <a
+                            href="mailto:luisbrttt@gmail.com"
+                            className="text-xl"
+                        >
+                            📧
+                        </a>
                         <a href="https://github.com/luisbertt" target="_blank">
-                            Github
+                            <i className="devicon-github-original text-xl" />
+                        </a>
+                        <a href="https://linkedin.com/in/luisbert">
+                            <i className="devicon-linkedin-plain text-xl" />
                         </a>
                     </p>
                 </header>

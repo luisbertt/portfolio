@@ -6,6 +6,14 @@ const Layout = ({ children }) => (
         <Head>
             <title>Luisbert Seijas</title>
             <link rel="icon" href="/images/favicon.ico" />
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+            />
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+            />
             <script
                 defer
                 data-domain="luisbert.me"
