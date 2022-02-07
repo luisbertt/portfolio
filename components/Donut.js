@@ -83,11 +83,12 @@ const Donut = () => {
         <pre
             onMouseEnter={play}
             onMouseLeave={pause}
-            className="w-min h-min text-xs tracking-widest"
+            className="w-min h-min text-xs tracking-widet py-6"
         >
             <a
                 href="https://www.a1k0n.net/2011/07/20/donut-math.html"
                 target="_blank"
+                rel="noreferrer"
             >
                 {donut}
             </a>

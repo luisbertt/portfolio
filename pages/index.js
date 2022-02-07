@@ -23,9 +23,22 @@ export default function Home() {
         <Layout>
             <Donut />
             <div>
-                <header className="py-14">
+                <header className="py-10">
                     <h1 className="text-4xl font-bold mb-4">Luisbert</h1>
-                    <p>Software Engineer. github</p>
+                    <p>Software Engineer</p>
+                    <p>
+                        Skills: Javascript, Typescript, Go, React, NextJS, SQL
+                    </p>
+                    <p>
+                        Interest: Learning, Film, Sports, Reading, Snowboarding,
+                        Chess
+                    </p>
+                    <p>
+                        Links:{" "}
+                        <a href="https://github.com/luisbertt" target="_blank">
+                            Github
+                        </a>
+                    </p>
                 </header>
                 <div className="flex space-x-4">
                     <div>
@@ -51,7 +64,7 @@ export default function Home() {
 
 const Project = ({ project, setActiveProject }) => (
     <p
-        className="w-96 p-2 hover:bg-zinc-900 rounded"
+        className="w-96 px-2 py-1 hover:bg-zinc-900 rounded"
         onMouseEnter={() => setActiveProject(project)}
     >
         <span className="font-bold underline">{project.name}</span>:{" "}
@@ -60,7 +73,7 @@ const Project = ({ project, setActiveProject }) => (
 )
 
 const Category = ({ category, children }) => (
-    <div className="mb-4">
+    <div className="mb-2">
         <h3 className="py-3 px-2 text-xl font-bold">{category}</h3>
         {children}
     </div>
