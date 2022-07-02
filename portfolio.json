@@ -1,5 +1,10 @@
 {
     "bio": "Software Engineer",
+    "links": {
+        "email": "luisbrttt@gmail.com",
+        "linkedin": "https://linkedin.com/in/luisbert",
+        "github": "https://github.com/luisbertt"
+    },
     "projects": [
         {
             "name": "Franco",
