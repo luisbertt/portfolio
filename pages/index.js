@@ -4,21 +4,12 @@ import Donut from "../components/Donut"
 import Details from "../components/Details"
 
 import cms from "../portfolio.json"
-
-const categories = [...new Set(cms.projects.map(p => p.category))]
-
-function groupProjectsByCategory(projects) {
-    return categories.map(category => ({
-        category,
-        projects: projects.filter(p => p.category == category),
-    }))
-}
+import { groupProjectsByCategory } from "../utils"
 
 const projects = groupProjectsByCategory(cms.projects)
 
 export default function Home() {
     const [activeProject, setActiveProject] = useState(null)
-
     return (
         <Layout>
             <Donut />
@@ -26,32 +17,24 @@ export default function Home() {
                 <header className="py-10">
                     <h1 className="text-4xl font-bold mb-4">Luisbert</h1>
                     <p>Software Engineer</p>
-                    <p>
-                        Skills: Javascript, Typescript, Go, React, NextJS, SQL
-                    </p>
-                    <p>
-                        Interest: Learning, Film, Sports, Reading, Snowboarding,
-                        Chess
-                    </p>
+                    <p>Skills: Javascript, Typescript, Go, React, NextJS, SQL</p>
+                    <p>Interest: Learning, Film, Sports, Reading, Snowboarding, Chess</p>
                     <p className="space-x-2">
                         <span>Links:</span>
-                        <a
-                            href="mailto:luisbrttt@gmail.com"
-                            className="text-2xl"
-                        >
-                            📧
+                        <a className="underline" href={`mailto:${cms.links.email}`}>
+                            Email
                         </a>
-                        <a href="https://github.com/luisbertt" target="_blank">
-                            <i className="devicon-github-original text-2xl" />
+                        <a className="underline" href={cms.links.github} target="_blank">
+                            GitHub
                         </a>
-                        <a href="https://linkedin.com/in/luisbert">
-                            <i className="devicon-linkedin-plain text-2xl" />
+                        <a className="underline" href={cms.links.linkedin} target="_blank">
+                            Linkedin
                         </a>
                     </p>
                 </header>
-                <div className="flex space-x-4">
+                <main className="flex space-x-4">
                     <div>
-                        <h2 className="text-2xl font-bold">projects</h2>
+                        <h2 className="text-2xl font-bold">Projects</h2>
                         {projects.map(({ category, projects }) => (
                             <Category category={category} key={category}>
                                 {projects.map(project => (
@@ -65,7 +48,7 @@ export default function Home() {
                         ))}
                     </div>
                     {activeProject ? <Details project={activeProject} /> : null}
-                </div>
+                </main>
             </div>
         </Layout>
     )
@@ -73,11 +56,10 @@ export default function Home() {
 
 const Project = ({ project, setActiveProject }) => (
     <p
-        className="w-96 px-2 py-1 hover:bg-zinc-900 rounded"
+        className="w-96 px-2 py-1 hover:bg-zinc-900 rounded cursor-pointer"
         onMouseEnter={() => setActiveProject(project)}
     >
-        <span className="font-bold underline">{project.name}</span>:{" "}
-        {project.description}
+        <span className="font-bold underline">{project.name}</span>: {project.description}
     </p>
 )
 
