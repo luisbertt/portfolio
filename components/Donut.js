@@ -48,11 +48,7 @@ function asciiframe() {
                 o = x + width * y,
                 N =
                     0 |
-                    (8 *
-                        ((st * sA - sp * ct * cA) * cB -
-                            sp * ct * sA -
-                            st * cA -
-                            cp * ct * sB))
+                    (8 * ((st * sA - sp * ct * cA) * cB - sp * ct * sA - st * cA - cp * ct * sB))
 
             if (y < height && y >= 0 && x >= 0 && x < width - 1 && D > z[o]) {
                 z[o] = D

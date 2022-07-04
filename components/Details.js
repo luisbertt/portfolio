@@ -31,9 +31,7 @@ const Details = ({ project }) => (
             {project.stack.includes("react") && (
                 <i className="devicon-react-original colored text-xl" />
             )}
-            {project.stack.includes("next.js") && (
-                <i className="devicon-nextjs-original text-xl" />
-            )}
+            {project.stack.includes("next.js") && <i className="devicon-nextjs-original text-xl" />}
             {project.stack.includes("postgresql") && (
                 <i className="devicon-postgresql-plain text-2xl" />
             )}
