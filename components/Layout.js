@@ -10,11 +10,6 @@ const Layout = ({ children }) => (
                 rel="stylesheet"
                 href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
             />
-            <script
-                defer
-                data-domain="luisbert.me"
-                src="https://plausible.io/js/plausible.js"
-            ></script>
         </Head>
 
         <main className="flex space-x-4">{children}</main>
