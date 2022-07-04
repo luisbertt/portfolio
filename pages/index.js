@@ -21,15 +21,11 @@ export default function Home() {
                     <p>Interest: Learning, Film, Sports, Reading, Snowboarding, Chess</p>
                     <p className="space-x-2">
                         <span>Links:</span>
-                        <a className="underline" href={`mailto:${cms.links.email}`}>
+                        <Link isEmail href={cms.links.email}>
                             Email
-                        </a>
-                        <a className="underline" href={cms.links.github} target="_blank">
-                            GitHub
-                        </a>
-                        <a className="underline" href={cms.links.linkedin} target="_blank">
-                            Linkedin
-                        </a>
+                        </Link>
+                        <Link href={cms.links.github}>GitHub</Link>
+                        <Link href={cms.links.linkedin}>LinkedIn</Link>
                     </p>
                 </header>
                 <main className="flex space-x-4">
@@ -53,6 +49,12 @@ export default function Home() {
         </Layout>
     )
 }
+
+const Link = ({ isEmail, href, children }) => (
+    <a className="underline" href={isEmail ? `mailto:${href}` : href} target="_blank">
+        {children}
+    </a>
+)
 
 const Project = ({ project, setActiveProject }) => (
     <p
