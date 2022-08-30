@@ -1,5 +1,7 @@
 {
+    "name": "Luisbert Seijas",
     "bio": "Software Engineer",
+    "skills": ["JavaScript", "TypeScript", "React", "React Native", "NextJS", "Go", "SQL", "AWS"],
     "links": {
         "email": "luisbrttt@gmail.com",
         "linkedin": "https://linkedin.com/in/luisbert",
@@ -9,15 +11,15 @@
         {
             "name": "Franco",
             "description": "management system for residential painting company",
-            "previewImg": "franco.png",
-            "stack": ["typescript", "react", "next.js", "prisma", "postgresql"],
+            "previewImg": "franco.jpeg",
+            "stack": ["Typescript", "React", "Next.js", "Prisma", "PostgreSQL"],
             "category": "Work"
         },
         {
             "name": "Gerhpe",
             "description": "gallery site for award-winning artist",
-            "previewImg": "gerhpe.png",
-            "stack": ["javascript", "react", "next.js", "airtable"],
+            "previewImg": "gerhpe.jpeg",
+            "stack": ["Javascript", "React", "Next.js", "Airtable"],
             "codeLink": "https://github.com/luisbertt/gerhpe",
             "demoLink": "https://gerhpe.com",
             "category": "Work"
@@ -25,8 +27,8 @@
         {
             "name": "Sorting Visualizer",
             "description": "a visualizer for different sorting algorithms",
-            "previewImg": "sorting-visualizer.png",
-            "stack": ["typescript", "react", "next.js"],
+            "previewImg": "sorting-visualizer.jpeg",
+            "stack": ["Typescript", "React", "Next.js"],
             "codeLink": "https://github.com/luisbertt/sorting-visualizer",
             "demoLink": "https://sortingvis.luisbert.me",
             "category": "Fun"
@@ -34,8 +36,8 @@
         {
             "name": "Flag Quiz",
             "description": "game where you guess countries based on their flag",
-            "previewImg": "flag-quiz.png",
-            "stack": ["typescript", "react", "next.js"],
+            "previewImg": "flag-quiz.jpeg",
+            "stack": ["Typescript", "React", "Next.js"],
             "codeLink": "https://github.com/luisbertt/flag-quiz",
             "demoLink": "https://flags.luisbert.me",
             "category": "Fun"
@@ -43,8 +45,8 @@
         {
             "name": "Minesweeper",
             "description": "minesweeper game",
-            "previewImg": "minesweeper.png",
-            "stack": ["javascript"],
+            "previewImg": "minesweeper.jpeg",
+            "stack": ["Javascript"],
             "codeLink": "https://github.com/luisbertt/minesweeper-vanillajs",
             "demoLink": "https://minesweeper.luisbert.me",
             "category": "Fun"
@@ -52,8 +54,8 @@
         {
             "name": "relations",
             "description": "tool to aggregate credit card monthly expenses",
-            "previewImg": "relations.png",
-            "stack": ["javascript", "react"],
+            "previewImg": "relations.jpeg",
+            "stack": ["Javascript", "React"],
             "codeLink": "https://github.com/luisbertt/relations",
             "demoLink": "https://relations.luisbert.me",
             "category": "Tools/misc."

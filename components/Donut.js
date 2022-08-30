@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 let A = 1,
     B = 1
@@ -63,6 +63,14 @@ const Donut = () => {
     const [donut, setDonut] = useState(asciiframe())
     const [animation, setAnimation] = useState(null)
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setDonut(asciiframe())
+        }, 85)
+
+        return () => clearInterval(interval)
+    }, [])
+
     function play() {
         setAnimation(
             setInterval(() => {
@@ -76,11 +84,7 @@ const Donut = () => {
     }
 
     return (
-        <pre
-            onMouseEnter={play}
-            onMouseLeave={pause}
-            className="w-min h-min text-xs tracking-widet py-6"
-        >
+        <pre className="w-min h-min text-xs tracking-widet py-6">
             <a
                 href="https://www.a1k0n.net/2011/07/20/donut-math.html"
                 target="_blank"
